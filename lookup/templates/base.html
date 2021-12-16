@@ -30,8 +30,9 @@
               </ul>
             </li>     
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form action={% url 'home' %} method="POST" class="d-flex">
+            {% csrf_token %}
+            <input name="zipcode" class="form-control me-2" type="search" placeholder="Enter Zipcode" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
